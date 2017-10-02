@@ -1,0 +1,21 @@
+<!-- post页面的wxml模板文件，可复用 -->
+
+<template name="postItemTpl">
+    <view class="post-container">
+        <view class="post-author-date">
+            <image src="{{avatar}}" />
+            <text class="post-date">{{date}}</text>
+        </view>
+        <text class="post-title">{{title}}</text>
+        <image class="post-image" src="{{postImg}}" />
+        <text class="post-content">{{content}}</text>
+        <view class="post-like">
+            <image src="/images/post-view.png" />
+            <text>{{readingNum}}</text>
+            <image src="/images/post-comments.png" />
+            <text>{{commentNum}}</text>
+            <image src="/images/post-like.png" />
+            <text>{{collectionNum}}</text>
+        </view>
+    </view>
+</template>

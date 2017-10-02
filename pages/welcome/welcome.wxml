@@ -1,0 +1,7 @@
+<view class="container">
+    <image class="avatar" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506605548670&di=1edbbe680d111b8bce0b7e4f0fbc4cfd&imgtype=0&src=http%3A%2F%2Fwww.51ppt.com.cn%2FArticle%2FUploadphotos_0708%2F200604%2F200641475551364.png"></image>
+    <text class="motto">Welcome to Linux</text>
+    <view catchtap='toPost' class="journey-container">
+        <text class="journey">开启Linux之旅</text>
+    </view>
+</view>

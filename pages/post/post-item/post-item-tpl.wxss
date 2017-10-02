@@ -1,0 +1,79 @@
+/*wmss样式模板，可复用*/
+
+.post-container {
+    flex-direction: column;
+    display: flex;
+    margin: 40rpx 0 40rpx;
+    background-color: #fff;
+    border-bottom: 1px solid #ededed;
+    border-top: 1px solid #ededed;
+    padding-bottom: 5px;
+}
+
+.post-author-date {
+    margin: 10rpx 0 20rpx 10rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post-author-date image {
+    width: 60rpx;
+    height: 60rpx;
+    align-content: center;
+}
+
+.post-author-date text {
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
+.post-image {
+    width: 80%;
+    height: 380rpx;
+    margin-top: 10rpx;
+    margin-bottom: 15rpx;
+    align-self: center;
+}
+
+.post-date {
+    font-size: 26rpx;
+    margin-bottom: 10px;
+}
+.post-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.post-content {
+    color: #666;
+    font-size: 26rpx;
+    font-family: Courier New, Courier, monospace;
+    margin-bottom: 10rpx;
+    margin-left: 20rpx;
+    letter-spacing: 2rpx;
+    line-height: 40rpx;
+}
+
+.post-like {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 10px 0 20px 10px;
+    align-items: center;
+}
+
+.post-like image {
+    height: 18px;
+    width: 18px;
+    margin-right: 6px;
+    margin-left: 10px;
+}
+
+.post-like text {
+    margin-right: 20px;
+}

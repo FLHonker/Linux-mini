@@ -1,0 +1,23 @@
+<!--pages/post/post.wxml-->
+
+<!-- 引用模板文件 -->
+<import src="post-item/post-item-tpl.wxml" />
+
+<view>
+    <swiper indicator-dots='{{true}}' autoplay='{{true}}' interval='3000'>
+        <swiper-item>
+            <image src="/images/post-ubuntu.png" />
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post-redhat.png" />
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post-centos.png" />
+        </swiper-item>
+    </swiper>
+    <block wx:for="{{postList}}" wx:key="postItem" wx:for-item="item" wx:for-index="idx">
+        <view catchtap="onTapToDetail" data-post-id="{{item.postId}}">
+            <template is="postItemTpl" data="{{...item}}" />
+        </view>
+    </block>
+</view>
