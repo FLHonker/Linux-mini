@@ -2,7 +2,7 @@ var postList = [{
     date: "Jan 27 2017",
     title: "Ubuntu 乌班图",
     postImg: "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=09075b8daec3793169658e7b8aaddc20/e824b899a9014c081ff1b12e0b7b02087af4f477.jpg",
-    avatar: "/images/post-header-ubuntu.png",
+    avatar: "/images/avatar/avatar-ubuntu.png",
     content: "Ubuntu（友帮拓、优般图、乌班图）是一个以桌面应用为主的开源GNU/Linux操作系统,...",
     readingNum: 92,
     collectionNum:88,
@@ -14,18 +14,58 @@ var postList = [{
     music:{
         url:"http://music.163.com/m/song?id=27492191&userid=443538609",
         title:"Ubuntu",
-        coverImg:"/images/post-ubuntu.png",
+        coverImg:"/images/post/post-ubuntu.png",
     },
     collectionStatus:true,
     upStatus:false,
     upNum:11,
-    comments:[]
+    comments:[
+        {
+            username: '德班',
+            avatar: '/images/avatar/github25.png',
+            create_time: '1484723344',
+            content: {
+                txt: '那年我18岁，踏上了Linux的巨轮远离人类。',
+                img: ["/images/comment/linux-1.jpg", "/images/comment/linux-2.jpg", "/images/comment/linux-3.jpg"],
+                audio: null
+            }
+        }, {
+            username: '优托邦',
+            avatar: '/images/avatar/yuan.png',
+            create_time: '1481018319',
+            content: {
+                txt: 'PHP才是世界上最好的语言！',
+                img: [],
+                audio: null,
+            }
+        },
+        {
+            username: '垃圾windows',
+            avatar: '/images/avatar/github26.png',
+            create_time: '1484496000',
+            content: {
+                txt: '用够了windows！受够了！',
+                img: ["/images/comment/linux-4.jpg",],
+                audio: null,
+            }
+        },
+        {
+            username: '爱崔莹真是太好了',
+            avatar: '/images/avatar/github27.png',
+            create_time: '1484582400',
+            content: {
+                txt: '爱崔莹真是太好了！',
+                img: [],
+                audio: { url: "http://music.163.com/m/song?id=482395261&userid=443538609", timeLen: 20 },
+            }
+        }
+    ]
 },
 {
     date: "Feb 28 2017",
     title: "RedHat 红 帽",
     postImg: "http://img5.imgtn.bdimg.com/it/u=2614920077,3001747150&fm=27&gp=0.jpg",
-    avatar: "/images/post-header-redhat.png",
+    avatar: "/images/avatar/avatar-redhat.png",
     content: "Red Hat（红帽）公司（NYSE：RHT）是一家开源解决方案供应商，也是标准普尔500指数...",
     readingNum: 112,
     collectionNum: 20,
@@ -37,7 +77,7 @@ var postList = [{
     music: {
         url: "http://music.163.com/m/song?id=27492191&userid=443538609",
         title: "Ubuntu",
-        coverImg: "/images/post-ubuntu.png",
+        coverImg: "/images/post/post-ubuntu.png",
     },
     collectionStatus: true,
     upStatus: false,
@@ -48,7 +88,7 @@ var postList = [{
     date: "Feb 8 2017",
     title: "CentOS 社区企业操作系统",
     postImg: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1506619981690&di=3a9d65a54bc445139f2d008ce4c8173b&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F10%2F80%2F01300543066068142530806655433.png",
-    avatar: "/images/post-header-centos.png",
+    avatar: "/images/avatar/avatar-centos.png",
     content: "CentOS（Community Enterprise Operating System）是Linux发行版之一，它是来自于...",
     readingNum: 120,
     collectionNum: 100,
@@ -60,7 +100,7 @@ var postList = [{
     music: {
         url: "http://music.163.com/m/song?id=27492191&userid=443538609",
         title: "Ubuntu",
-        coverImg: "/images/post-ubuntu.png",
+        coverImg: "/images/post/post-ubuntu.png",
     },
     collectionStatus: true,
     upStatus: false,

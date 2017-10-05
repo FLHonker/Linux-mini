@@ -6,13 +6,13 @@
 <view>
     <swiper indicator-dots='{{true}}' autoplay='{{true}}' interval='3000'>
         <swiper-item>
-            <image src="/images/post-ubuntu.png" />
+            <image src="/images/post/post-ubuntu.png" />
         </swiper-item>
         <swiper-item>
-            <image src="/images/post-redhat.png" />
+            <image src="/images/post/post-redhat.png" />
         </swiper-item>
         <swiper-item>
-            <image src="/images/post-centos.png" />
+            <image src="/images/post/post-centos.png" />
         </swiper-item>
     </swiper>
     <block wx:for="{{postList}}" wx:key="postItem" wx:for-item="item" wx:for-index="idx">

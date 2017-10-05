@@ -26,6 +26,8 @@ module.exports = {
 
 */
 
+//引用utils模块
+var util = require('../utils/util.js');
 /**
  * ES6的新特性Class、Module来改写缓存操作类
  */
@@ -115,7 +117,28 @@ class DBPost {
     getCommentData(){
         var itemData = this.getPostItemById().data;
         //按时间降序排列评论
+        /*
         itemData.comments.sort(this.compareWithTime);
+        var len = itemData.comments.length, comment;
+        for(var i=0;i<len;i++){
+            //将comment中的时间戳转换成可阅读格式
+            comment = itemData.comments[i];
+            comment.create_time = util.getDiffTime(comment.crete_time, true);
+        }
+        */
+        return itemData.comments;
+    }
+    
+    //将评论按时间降序排列用到的时间戳比较方法
+    compareWithTime(value1, value2){
+        var flag = parseFloat(value1.create_time) - parseFloat(value2.create_time);
+        if(flag < 0){
+            return 1;
+        }else if(flag > 0){
+            return -1;
+        }else{
+            return 0;
+        }
     }
 };
 export{DBPost}

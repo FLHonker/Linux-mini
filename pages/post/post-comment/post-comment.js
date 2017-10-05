@@ -19,6 +19,7 @@ Page({
         this.dbPost = new DBPost(postId);
         var comments = this.dbPost.getCommentData();
 
+        console.log(comments);
         //綁定评论数据
         this.setData({
             comments:comments

@@ -13,17 +13,17 @@
 </view>
 <view class="tool">
     <view class="tool-item" catchtap='onUpTap' data-post-id="{{post.postId}}">
-        <image wx:if="{{post.upStatus}}" src="/images/post-liked.png" />
-        <image wx:else src="/images/post-like.png" />
+        <image wx:if="{{post.upStatus}}" src="/images/icon/post-liked.png" />
+        <image wx:else src="/images/icon/post-like.png" />
         <text>{{post.upNum}}</text>
     </view>
     <view class="tool-item comment" catchtap='onCommentTap' data-post-id="{{post.postId}}">
-        <image src="/images/post-comments.png" />
+        <image src="/images/icon/post-comments.png" />
         <text>{{post.commentNum}}</text>
     </view>
     <view class="tool-item" catchtap='onCollectionTap' data-post-id="{{post.postId}}">
-        <image wx:if="{{post.collectionStatus}}" src="/images/post-collected.png" />
-        <image wx:else src="/images/post-collect.png" />
+        <image wx:if="{{post.collectionStatus}}" src="/images/icon/post-collected.png" />
+        <image wx:else src="/images/icon/post-collect.png" />
         <text>{{post.collectionNum}}</text>
     </view>
 </view>

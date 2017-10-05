@@ -10,11 +10,11 @@
         <image class="post-image" src="{{postImg}}" />
         <text class="post-content">{{content}}</text>
         <view class="post-like">
-            <image src="/images/post-view.png" />
+            <image src="/images/icon/post-view.png" />
             <text>{{readingNum}}</text>
-            <image src="/images/post-comments.png" />
+            <image src="/images/icon/post-comments.png" />
             <text>{{commentNum}}</text>
-            <image src="/images/post-like.png" />
+            <image src="/images/icon/post-like.png" />
             <text>{{collectionNum}}</text>
         </view>
     </view>

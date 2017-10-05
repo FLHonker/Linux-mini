@@ -1,2 +1,35 @@
 <!--pages/post/post-comment/post-comment.wxml-->
-<text>pages/post/post-comment/post-comment.wxml</text>
+<view class="comment-detail-box">
+    <view class="comment-main-box">
+        <view class="comment-title">评论......(共{{comments.length}}条)</view>
+        <block wx:key="comment-item" wx:for="{{comments}}" wx:for-item="item" wx:for-index="idx">
+            <view class="comment-item">
+                <view class="comment-item-header">
+                    <view class="left-img">
+                        <image src="{{item.avatar}}" />
+                    </view>
+                    <view class="right-user">
+                        <text class="user-name">{{item.username}}</text>
+                    </view>
+                    <view class="comment-body">
+                        <view class="comment-txt" wx:key="comment-txt" wx:for="{{item.content.txt}}">
+                            <text>{{item.content.txt}}</text>
+                        </view>
+                        <view class="comment-voice" wx:key="audio" wx:for="{{item.content.audio && item.content.audio.url}}">
+                            <view data-url="{{item.content.audio.url}}" class="comment-voice-item" catchtap='playAudio'>
+                                <image src="/images/icon/voice.png" class="voice-play" />
+                                <text>{{item.content.audio.timeLen}}</text>
+                            </view>
+                        </view>
+                        <view class="comment-img" wx:if="{{item.content.img.length!=0}}">
+                            <block wx:key="comment-img" wx:for="{{item.content.img}}" wx:for-item="img">
+                                <image src="{{img}}" mode="aspectFill" />
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <view class="comment-time">{{item.create_time}}</view>
+            </view>
+        </block>
+    </view>
+</view>
