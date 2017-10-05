@@ -74,5 +74,53 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    /**
+     * 点击收藏
+     */
+    onCollectionTap: function() {
+        //dbPost对象已经在onLoad函数里被保存到了this变量中，无需再次实例化
+        var newData = this.dbPost.collect();
+        //交互反馈
+        wx.showToast({
+            title: newData.collectionStatus?'收藏成功':'取消收藏',
+            duration: 1000,
+            icon: "success",
+            mask: true
+        })
+        //重新绑定数据。注意，不要将整个newData全部作为setData的参数
+        //应当有选择地更新部分数据
+        this.setData({
+            'post.collectionStatus':newData.collectionStatus,
+            'post.collectionNum': newData.collectionNum
+        })
+    },
+
+    /**
+     * 点击点赞
+     */
+    onUpTap:function() {
+        //dbPost对象已经在onLoad函数里被保存到了this变量中，无需再次实例化
+        var newData = this.dbPost.up();
+
+        //交互反馈 略
+
+        //重新绑定数据。注意，不要将整个newData全部作为setData的参数
+        //应当有选择地更新部分数据
+        this.setData({
+            'post.upStatus': newData.upStatus,
+            'post.upNum': newData.upNum
+        })
+    },
+
+    /**
+     * 点击评论
+     */
+    onCommentTap: function(event) {
+        var id = event.currentTarget.dataset.poatId;
+        wx.navigateTo({
+            url: '../post-comment/post-comment?id='+id,
+        })
     }
 })

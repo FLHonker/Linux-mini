@@ -40,13 +40,13 @@ class DBPost {
         var res = wx.getStorageSync(this.storageKeyName);
         if (!res) {
             res = require("../data/data.js").postList;
-            this.initPostList(res);
+            this.execSetStorageSync(res);
         }
         return res;
     }
 
     //保存活更新缓存数据
-    initPostList(data) {
+    execSetStorageSync(data) {
         wx.setStorageSync(this.storageKeyName, data)
     }
 
@@ -62,6 +62,60 @@ class DBPost {
                 }
             }
         }
+    }
+
+    // 收藏文章
+    collect(){
+        return this.updatePostData('collect');
+    }
+
+    // 点赞文章
+    up(){
+        return this.updatePostData('up');
+    }
+
+    //更新本地的点赞、评论信息、收藏、阅读量
+    updatePostData(category){
+        var itemData = this.getPostItemById(), postData = itemData.data, allPostData = this.getAllPostData();
+        switch(category){
+            case 'collect':
+                //处理收藏
+                if(!postData.collectionStatus){
+                    //如果当前状态是未收藏
+                    postData.collectionNum++;
+                    postData.collectionStatus = true;
+                } else {
+                    //如果当前状态是已收藏
+                    postData.collectionNum--;
+                    postData.collectionStatus = false;
+                }
+                break;
+            case 'up':
+                //处理点赞
+                if(!postData.upStatus){
+                    //如果当前状态为未点赞
+                    postData.upNum++;
+                    postData.upStatus = true;
+                } else {
+                    //如果已经点赞
+                    postData.upNum--;
+                    postData.upStatus = false;
+                }
+                break;
+            default: 
+                break;
+        }
+        //更新缓存数据库
+        allPostData[itemData.index] = postData;
+        this.execSetStorageSync(allPostData);
+        return postData;
+    }
+
+    //获取文章评论数据
+    getCommentData(){
+        var itemData = this.getPostItemById().data;
+        //按时间降序排列评论
+        itemData.comments.sort(this.compareWithTime);
     }
 };
 export{DBPost}
