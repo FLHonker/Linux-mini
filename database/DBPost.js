@@ -47,7 +47,7 @@ class DBPost {
         return res;
     }
 
-    //保存活更新缓存数据
+    //保存或更新缓存数据
     execSetStorageSync(data) {
         wx.setStorageSync(this.storageKeyName, data)
     }
@@ -77,7 +77,7 @@ class DBPost {
     }
 
     //更新本地的点赞、评论信息、收藏、阅读量
-    updatePostData(category){
+    updatePostData(category, newComment){
         var itemData = this.getPostItemById(), postData = itemData.data, allPostData = this.getAllPostData();
         switch(category){
             case 'collect':
@@ -104,6 +104,13 @@ class DBPost {
                     postData.upStatus = false;
                 }
                 break;
+            case 'comment':
+                postData.comments.push(newComment);
+                postData.commentNum++;
+                break;
+            case 'reading':
+                postData.readingNumm++;
+                break;
             default: 
                 break;
         }
@@ -117,15 +124,14 @@ class DBPost {
     getCommentData(){
         var itemData = this.getPostItemById().data;
         //按时间降序排列评论
-        /*
         itemData.comments.sort(this.compareWithTime);
         var len = itemData.comments.length, comment;
         for(var i=0;i<len;i++){
             //将comment中的时间戳转换成可阅读格式
             comment = itemData.comments[i];
-            comment.create_time = util.getDiffTime(comment.crete_time, true);
+            comment.create_time = util.getDiffTime(comment.create_time, true);
         }
-        */
+        
         return itemData.comments;
     }
     
@@ -139,6 +145,16 @@ class DBPost {
         }else{
             return 0;
         }
+    }
+
+    //发表评论
+    newComment(newComment){
+        this.updatePostData('comment', newComment);
+    }
+
+    //阅读数+1
+    addReadingTimes(){
+        this.updatePostData('reading');
     }
 };
 export{DBPost}

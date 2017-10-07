@@ -26,7 +26,7 @@ var postList = [{
             create_time: '1484723344',
             content: {
                 txt: '那年我18岁，踏上了Linux的巨轮远离人类。',
-                img: ["/images/comment/linux-1.jpg", "/images/comment/linux-2.jpg", "/images/comment/linux-3.jpg"],
+                img: ["https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507285053797&di=2d1cf4c7eb042143901ebc077781bc46&imgtype=0&src=http%3A%2F%2Fimg45.ownskin.com%2Fpowertheme%2Fbig%2F38%2FMUmH1zVo.gif", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507284975793&di=43ed80cf92baaa24a9800cd68e4de8b8&imgtype=0&src=http%3A%2F%2Fimg2.ownskin.com%2Fpowertheme%2Fbig%2F15%2F83JxcjT9.gif", "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507284991567&di=bff8593ebde9ac425f17a02f35febe05&imgtype=0&src=http%3A%2F%2Fimg44.ownskin.com%2Fpowertheme%2Fbig%2F23%2FE75uq6x6.gif"],
                 audio: null
             }
         }, {
@@ -45,7 +45,7 @@ var postList = [{
             create_time: '1484496000',
             content: {
                 txt: '用够了windows！受够了！',
-                img: ["/images/comment/linux-4.jpg",],
+                img: ["https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1507285116052&di=70924ef551678b68579a1a4d19462a80&imgtype=0&src=http%3A%2F%2Ft.people.com.cn%2Fmsgimage%2F20140408%2Fb_227295_1396940087859.gif",],
                 audio: null,
             }
         },

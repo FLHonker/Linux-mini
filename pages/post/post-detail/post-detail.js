@@ -22,6 +22,8 @@ Page({
         this.setData({
             post: this.postData
         })
+        //只要是打开了此页面，阅读数就+1
+        this.addReadingTimes();
         //console.log(this.postData);
     },
 
@@ -122,5 +124,10 @@ Page({
         wx.navigateTo({
             url: '../post-comment/post-comment?id='+id,
         })
-    }
+    },
+
+    //阅读量+1
+    addReadingTimes: function() {
+        this.dbPost.addReadingTimes();
+    },
 })
