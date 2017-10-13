@@ -1,0 +1,20 @@
+<import src="../single-vedio/vedio-tpl.wxml" />
+
+<template name="vedioListTpl">
+    <view class="vedio-list-container">
+        <view class="inner-container">
+            <view class="vedio-head">
+                <text class="slogan">{{categoryTitle}}</text>
+                <view class="more" catchtap='onMoreTap' data-category="{{categoryTitle}}">
+                    <text class="more-text">更多</text>
+                    <image class="more-img" src="/images/icon/wx_app_arrow_right.png"></image>
+                </view>
+            </view>
+            <view class="vedios-container">
+                <block wx:key="vedios" wx:for="{{vedios}}" wx:for-item="vedio">
+                    <template is="vedioTpl" data="{{...vedio}}" />
+                </block> 
+            </view>
+        </view>
+    </view>
+</template>

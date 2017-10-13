@@ -1,5 +1,8 @@
 // pages/post/post-detail/post-detail.js
 
+//获取小程序APP对象
+var app = getApp();
+
 //使用ES6版本的DBPost
 import { DBPost } from '../../../database/DBPost.js';
 
@@ -9,7 +12,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        //音乐播放控制变量
+        isPlayingMusic: false,
     },
 
     /**
@@ -24,6 +28,8 @@ Page({
         })
         //只要是打开了此页面，阅读数就+1
         this.addReadingTimes();
+        this.setMusicMonitor();
+        this.initMusicStatus();
         //console.log(this.postData);
     },
 
@@ -54,7 +60,11 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+        //页面被卸载时主动停止音乐播放
+        wx.stopBackgroundAudio();
+        this.setData({
+            isPlayingMusic: false
+        });
     },
 
     /**
@@ -75,7 +85,11 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        return {
+            title: this.postData.title,
+            desc: this.postData.content,
+            path: "/pages//post/post-detail/post-detail"
+        }
     },
 
     /**
@@ -130,4 +144,68 @@ Page({
     addReadingTimes: function() {
         this.dbPost.addReadingTimes();
     },
+
+    /**
+     * 切换音乐播放图标
+     */
+    onMusicTap:function(event) {
+        if(this.data.isPlayingMusic){
+            wx.pauseBackgroundAudio();
+            this.setData({
+                isPlayingMusic:false
+            });
+            app.globalData.g_isPlayingMusic = false;
+        }
+        else{
+            wx.playBackgroundAudio({
+                dataUrl: this.postData.music.url,
+                title: this.postData.music.title,
+                coverImgUrl: this.postData.music.coverImg
+            })
+            this.setData({
+                isPlayingMusic: true
+            });
+            app.globalData.g_isPlayingMusic = true;
+            app.globalData.g_currentMusicPostId = this.postData.postId;
+        }
+    },
+
+    // 设置音乐播放监听
+    setMusicMonitor:function() {
+        var that = this;
+        wx.onBackgroundAudioStop(function(){
+            //只处理当前页面的音乐停止
+            that.setData({
+                isPlayingMusic: false
+            })
+            app.globalData.g_isPlayingMusic = false;
+        });
+
+        wx.onBackgroundAudioPlay(function(){
+            //只处理当前页面的音乐播放
+            if(app.globalData.g_currentMusicPostId == that.postData.postId){
+                that.setData({
+                    isPlayingMusic: true
+                })
+            }
+            app.globalData.g_isPlayingMusic = true;
+        });
+
+        wx.onBackgroundAudioPause(function () {
+            //只处理当前页面的音乐暂停
+            if (app.globalData.g_currentMusicPostId == that.postData.postId) {
+                that.setData({
+                    isPlayingMusic: false
+                })
+            }
+            app.globalData.g_isPlayingMusic = false;
+        });
+    },
+
+    //初始化音乐播放图标状态
+    initMusicStatus:function() {
+        this.setData({
+            isPlayingMusic: app.globalData.g_isPlayingMusic
+        });
+    }
 })

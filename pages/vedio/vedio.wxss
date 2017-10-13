@@ -1,0 +1,10 @@
+/* pages/vedio/vedio.wxss */
+@import "vedio-list/vedio-list-tpl.wxss";
+
+.container {
+    background-color: #f2f2f2;
+}
+
+.vedios-template {
+    margin-bottom: 30rpx;
+}

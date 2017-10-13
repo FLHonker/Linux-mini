@@ -81,5 +81,15 @@ Page({
         wx.navigateTo({
             url: 'post-detail/post-detail?id='+postId,
         })
-    }
+    },
+
+    /**
+     * 点击swiper跳转到文章detail页面
+     */
+    onSwiperTap:function(event) {
+        var postId = event.target.dataset.postId;
+        wx.navigateTo({
+            url: 'post-detail/post-detail?id=' + postId,
+        })
+    },
 })

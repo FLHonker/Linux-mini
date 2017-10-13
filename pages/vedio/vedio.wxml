@@ -1,0 +1,14 @@
+<!--pages/vedio/vedio.wxml-->
+<import src="vedio-list/vedio-list-tpl.wxml" />
+
+<view class="container">
+    <view class="vedios-template">
+        <template is="vedioListTpl" data="{{...inTheaters}}" />
+    </view>
+    <view class="vedios-template">
+        <template is="vedioListTpl" data="{{...comingSoon}}" />
+    </view>
+     <view class="vedios-template">
+        <template is="vedioListTpl" data="{{...top250}}" />
+    </view>
+</view>

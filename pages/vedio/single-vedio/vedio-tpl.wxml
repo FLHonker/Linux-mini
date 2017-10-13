@@ -1,0 +1,9 @@
+<import src="../stars/stars-tpl.wxml" />
+
+<template name="vedioTpl">
+    <view class="vedio-container" catchtap='onVedioTap' data-vedio-id="{{vedioId}}">
+        <image class="vedio-img" src="{{coverageUrl}}"></image>
+        <text class="vedio-title">{{title}}</text>
+        <template is="starsTpl" data="{{stars:stars,score:average}}" />
+    </view>
+</template>

@@ -1,0 +1,18 @@
+@import "../stars/stars-tpl.wxss";
+
+.vedio-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 22rpx;
+}
+
+.vedio-img {
+    width: 200rpx;
+    height: 270rpx;
+    padding-bottom: 20rpx;
+}
+
+.vedio-title {
+    margin-bottom: 16rpx;
+    font-size: 24rpx;
+}

@@ -62,7 +62,7 @@
     height: 60rpx;
     text-align: center;
     line-height: 64rpx;
-    margin: 20rpx 28rpx 20rpx 20rpx 0;
+    margin: 20rpx 28rpx 30rpx 20rpx;
 }
 
 .tool-item {
@@ -72,8 +72,8 @@
 }
 
 .tool-item image {
-    height: 30rpx;
-    width: 30rpx;
+    height: 32rpx;
+    width: 32rpx;
     vertical-align: -3rpx;
     margin-right: 10rpx;
 }
@@ -81,3 +81,14 @@
 .comment image {
     transform: scale(0.85);
 } 
+
+/* 音乐控件样式 */
+.music {
+    width: 110rpx;
+    height: 110rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -51rpx;
+    top: 180rpx;
+    opacity: 0.9;
+}

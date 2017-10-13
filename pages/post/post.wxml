@@ -4,15 +4,15 @@
 <import src="post-item/post-item-tpl.wxml" />
 
 <view>
-    <swiper indicator-dots='{{true}}' autoplay='{{true}}' interval='3000'>
+    <swiper catchtap='onSwtchTap' indicator-dots='{{true}}' autoplay='{{true}}' interval='3000'>
         <swiper-item>
-            <image src="/images/post/post-ubuntu.png" />
+            <image src="/images/post/post-ubuntu.png" data-post-id='1' />
         </swiper-item>
         <swiper-item>
-            <image src="/images/post/post-redhat.png" />
+            <image src="/images/post/post-redhat.png" data-post-id='2' />
         </swiper-item>
         <swiper-item>
-            <image src="/images/post/post-centos.png" />
+            <image src="/images/post/post-centos.png" data-post-id='3' />
         </swiper-item>
     </swiper>
     <block wx:for="{{postList}}" wx:key="postItem" wx:for-item="item" wx:for-index="idx">
