@@ -1,0 +1,3 @@
+<!--pages/vedio/more-vedio/more-vedio.wxml-->
+<import src="../vedio-grid/vedio-grid-tpl.wxml" />
+<template is="vedioGridTpl" data="{{vedios}}" />

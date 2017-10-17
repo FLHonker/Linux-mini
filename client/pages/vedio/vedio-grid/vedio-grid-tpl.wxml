@@ -1,0 +1,11 @@
+<import src="../single-vedio/vedio-tpl.wxml" />
+
+<template name="vedioGridTpl">
+    <view class="grid-contianer">
+        <block wx:key="vedios-grid" wx:for="{{vedios}}" wx:for-item="vedio">
+            <view class="single-view-container">
+                <template is="vedioTpl" data="{{...vedio}}" />
+            </view>
+        </block>
+    </view>
+</template>

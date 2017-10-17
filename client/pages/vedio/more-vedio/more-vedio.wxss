@@ -1,0 +1,2 @@
+/* pages/vedio/more-vedio/more-vedio.wxss */
+@import "../vedio-grid/vedio-grid-tpl.wxss";
